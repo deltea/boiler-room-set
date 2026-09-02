@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TrackResource" format=3 uid="uid://c713ac8cwa4mo"]
+
+[ext_resource type="Texture2D" uid="uid://mmm52cd46egm" path="res://assets/covers/ONE TIME FOR YOUR MIND.png" id="1_3s78b"]
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="1_emkkj"]
+[ext_resource type="Script" uid="uid://c4uxtj7gdqjlw" path="res://scripts/TimestampResource.gd" id="2_hr2ee"]
+
+[sub_resource type="Resource" id="Resource_emkkj"]
+script = ExtResource("2_hr2ee")
+minutes = 14.0
+seconds = 6.5
+metadata/_custom_type_script = "uid://c4uxtj7gdqjlw"
+
+[resource]
+script = ExtResource("1_emkkj")
+name = "ONE TIME FOR YOUR MIND"
+timestamp = SubResource("Resource_emkkj")
+artist = "nuphory"
+cover_art = ExtResource("1_3s78b")
+metadata/_custom_type_script = "uid://bru1uyslj2kgs"

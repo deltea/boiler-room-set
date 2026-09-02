@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TrackResource" format=3 uid="uid://clkrhb56lr14a"]
+
+[ext_resource type="Texture2D" uid="uid://bqqwnc8d2euce" path="res://assets/covers/Drugs.png" id="1_7sl45"]
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="1_5375o"]
+[ext_resource type="Script" uid="uid://c4uxtj7gdqjlw" path="res://scripts/TimestampResource.gd" id="2_35dwr"]
+
+[sub_resource type="Resource" id="Resource_5375o"]
+script = ExtResource("2_35dwr")
+minutes = 30.0
+seconds = 51.32
+metadata/_custom_type_script = "uid://c4uxtj7gdqjlw"
+
+[resource]
+script = ExtResource("1_5375o")
+name = "Drugs"
+timestamp = SubResource("Resource_5375o")
+artist = "Benny"
+cover_art = ExtResource("1_7sl45")
+metadata/_custom_type_script = "uid://bru1uyslj2kgs"

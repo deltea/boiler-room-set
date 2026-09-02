@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TrackResource" format=3 uid="uid://dc6ynlp7ah1xc"]
+
+[ext_resource type="Texture2D" uid="uid://bvqp0slnsy8fb" path="res://assets/covers/Dog Bus (menux64 Remix).png" id="1_cc5wl"]
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="1_j2iye"]
+[ext_resource type="Script" uid="uid://c4uxtj7gdqjlw" path="res://scripts/TimestampResource.gd" id="2_6w4hm"]
+
+[sub_resource type="Resource" id="Resource_j2iye"]
+script = ExtResource("2_6w4hm")
+minutes = 38.0
+seconds = 42.28
+metadata/_custom_type_script = "uid://c4uxtj7gdqjlw"
+
+[resource]
+script = ExtResource("1_j2iye")
+name = "Dog Bus (menux64 Remix)"
+timestamp = SubResource("Resource_j2iye")
+artist = "Metaroom & Telemist"
+cover_art = ExtResource("1_cc5wl")
+metadata/_custom_type_script = "uid://bru1uyslj2kgs"

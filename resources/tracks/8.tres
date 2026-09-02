@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TrackResource" format=3 uid="uid://b18da47ljdeds"]
+
+[ext_resource type="Texture2D" uid="uid://2oi34wf6t1mm" path="res://assets/covers/Illegal + Nia Archives.png" id="1_3o11m"]
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="1_y5y1q"]
+[ext_resource type="Script" uid="uid://c4uxtj7gdqjlw" path="res://scripts/TimestampResource.gd" id="2_6ffoq"]
+
+[sub_resource type="Resource" id="Resource_b1qrp"]
+script = ExtResource("2_6ffoq")
+minutes = 24.0
+seconds = 53.53
+metadata/_custom_type_script = "uid://c4uxtj7gdqjlw"
+
+[resource]
+script = ExtResource("1_y5y1q")
+name = "Illegal + Nia Archives"
+timestamp = SubResource("Resource_b1qrp")
+artist = "PinkPantheress & Nia Archives"
+cover_art = ExtResource("1_3o11m")
+metadata/_custom_type_script = "uid://bru1uyslj2kgs"

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c5lrk84s8wjtr"]
+
+[ext_resource type="Script" uid="uid://ciyeehlo0oono" path="res://scenes/dot_generator/dot_generator.gd" id="1_7rvya"]
+[ext_resource type="Texture2D" uid="uid://df7gf30hgwg1j" path="res://assets/textures/circle.svg" id="2_vy868"]
+
+[node name="DotGenerator" type="Node2D" unique_id=1522487084]
+script = ExtResource("1_7rvya")
+dot_texture = ExtResource("2_vy868")
+dot_color = Color(0.8980392, 0.8980392, 0.8980392, 1)
+rows = 5
+dot_chance = 0.4
+row_spacing = 40.0
+
+[node name="Timer" type="Timer" parent="." unique_id=459175843]
+wait_time = 1.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

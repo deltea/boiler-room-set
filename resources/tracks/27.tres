@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TrackResource" format=3 uid="uid://b8xs4ejgrlu27"]
+
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="1_dghkc"]
+[ext_resource type="Texture2D" uid="uid://bmi5rf6cadnwf" path="res://assets/covers/❯ GT3. (Rally House) ⧸ prod.DTM x nuphory x Sadfriendd.png" id="1_fwf2n"]
+[ext_resource type="Script" uid="uid://c4uxtj7gdqjlw" path="res://scripts/TimestampResource.gd" id="2_46ubi"]
+
+[sub_resource type="Resource" id="Resource_2hfry"]
+script = ExtResource("2_46ubi")
+minutes = 89.0
+seconds = 49.76
+metadata/_custom_type_script = "uid://c4uxtj7gdqjlw"
+
+[resource]
+script = ExtResource("1_dghkc")
+name = "GT3"
+timestamp = SubResource("Resource_2hfry")
+artist = "Sadfriendd, prod. DTM & nuphory"
+cover_art = ExtResource("1_fwf2n")
+metadata/_custom_type_script = "uid://bru1uyslj2kgs"

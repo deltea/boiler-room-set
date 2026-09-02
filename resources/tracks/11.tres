@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TrackResource" format=3 uid="uid://1au103sewd80"]
+
+[ext_resource type="Texture2D" uid="uid://drbivqjp1d3m7" path="res://assets/covers/Snowblind (nuphory Remix).png" id="1_2wfob"]
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="1_6ply4"]
+[ext_resource type="Script" uid="uid://c4uxtj7gdqjlw" path="res://scripts/TimestampResource.gd" id="2_ghbt7"]
+
+[sub_resource type="Resource" id="Resource_come4"]
+script = ExtResource("2_ghbt7")
+minutes = 33.0
+seconds = 42.92
+metadata/_custom_type_script = "uid://c4uxtj7gdqjlw"
+
+[resource]
+script = ExtResource("1_6ply4")
+name = "Snowblind (nuphory Remix)"
+timestamp = SubResource("Resource_come4")
+artist = "Au5, Tasha Baxter, & nuphory"
+cover_art = ExtResource("1_2wfob")
+metadata/_custom_type_script = "uid://bru1uyslj2kgs"

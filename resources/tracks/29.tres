@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TrackResource" format=3 uid="uid://cmdeyivfgxeob"]
+
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="1_2jbad"]
+[ext_resource type="Texture2D" uid="uid://cras0fkn8ak2i" path="res://assets/covers/girl EDM.png" id="1_klnw6"]
+[ext_resource type="Script" uid="uid://c4uxtj7gdqjlw" path="res://scripts/TimestampResource.gd" id="2_k3ogn"]
+
+[sub_resource type="Resource" id="Resource_46ubi"]
+script = ExtResource("2_k3ogn")
+minutes = 97.0
+seconds = 20.62
+metadata/_custom_type_script = "uid://c4uxtj7gdqjlw"
+
+[resource]
+script = ExtResource("1_2jbad")
+name = "girl EDM"
+timestamp = SubResource("Resource_46ubi")
+artist = "Ninajirachi"
+cover_art = ExtResource("1_klnw6")
+metadata/_custom_type_script = "uid://bru1uyslj2kgs"

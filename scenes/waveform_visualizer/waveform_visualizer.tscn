@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b8wyesb3egmk4"]
+
+[ext_resource type="Script" uid="uid://t7jx17hyv5np" path="res://scenes/waveform_visualizer/waveform_visualizer.gd" id="1_jo4jv"]
+
+[node name="WaveformVisualizer" type="Node2D" unique_id=701222300]
+script = ExtResource("1_jo4jv")

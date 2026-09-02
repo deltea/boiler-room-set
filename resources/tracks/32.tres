@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TrackResource" format=3 uid="uid://famygml6vr28"]
+
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="1_5ttfw"]
+[ext_resource type="Texture2D" uid="uid://bwglbv6do6get" path="res://assets/covers/Start Me Up (nuphory Remix).png" id="1_qkqen"]
+[ext_resource type="Script" uid="uid://c4uxtj7gdqjlw" path="res://scripts/TimestampResource.gd" id="2_lm8t6"]
+
+[sub_resource type="Resource" id="Resource_v63fy"]
+script = ExtResource("2_lm8t6")
+minutes = 108.0
+seconds = 40.61
+metadata/_custom_type_script = "uid://c4uxtj7gdqjlw"
+
+[resource]
+script = ExtResource("1_5ttfw")
+name = "Start Me Up (nuphory Remix)"
+timestamp = SubResource("Resource_v63fy")
+artist = "MAR VISTA, Kellin Quinn & nuphory"
+cover_art = ExtResource("1_qkqen")
+metadata/_custom_type_script = "uid://bru1uyslj2kgs"

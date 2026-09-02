@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TrackResource" format=3 uid="uid://d3v5rt4hvxou6"]
+
+[ext_resource type="Texture2D" uid="uid://bsxp2gcjkadnj" path="res://assets/covers/eurolife.png" id="1_bsnee"]
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="1_s8dcl"]
+[ext_resource type="Script" uid="uid://c4uxtj7gdqjlw" path="res://scripts/TimestampResource.gd" id="2_uybuh"]
+
+[sub_resource type="Resource" id="Resource_come4"]
+script = ExtResource("2_uybuh")
+minutes = 62.0
+seconds = 41.59
+metadata/_custom_type_script = "uid://c4uxtj7gdqjlw"
+
+[resource]
+script = ExtResource("1_s8dcl")
+name = "eurolife"
+timestamp = SubResource("Resource_come4")
+artist = "dreamloader"
+cover_art = ExtResource("1_bsnee")
+metadata/_custom_type_script = "uid://bru1uyslj2kgs"

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TrackResource" format=3 uid="uid://7324k10vo0qf"]
+
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="1_3a0sv"]
+[ext_resource type="Texture2D" uid="uid://j76trtuhb5bj" path="res://assets/covers/i'll never find this sound of silence.png" id="1_vdub3"]
+[ext_resource type="Script" uid="uid://c4uxtj7gdqjlw" path="res://scripts/TimestampResource.gd" id="2_uvit7"]
+
+[sub_resource type="Resource" id="Resource_m6o4l"]
+script = ExtResource("2_uvit7")
+minutes = 104.0
+seconds = 37.84
+metadata/_custom_type_script = "uid://c4uxtj7gdqjlw"
+
+[resource]
+script = ExtResource("1_3a0sv")
+name = "i'll never find this sound of silence"
+timestamp = SubResource("Resource_m6o4l")
+artist = "beansclub"
+cover_art = ExtResource("1_vdub3")
+metadata/_custom_type_script = "uid://bru1uyslj2kgs"

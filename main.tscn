@@ -1,0 +1,267 @@
+[gd_scene format=3 uid="uid://bf2sy1h3f0y7a"]
+
+[ext_resource type="Script" uid="uid://c12s0k83nnrj8" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="AudioStream" uid="uid://b7rdd671alw5x" path="res://assets/final.wav" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="2_h2yge"]
+[ext_resource type="Resource" uid="uid://carrtkyw2h43v" path="res://resources/tracks/1.tres" id="3_b1qrp"]
+[ext_resource type="Resource" uid="uid://rl8o7o6g50ox" path="res://resources/tracks/2.tres" id="4_come4"]
+[ext_resource type="Resource" uid="uid://ccbgi2rob1xxh" path="res://resources/tracks/3.tres" id="5_h8e4i"]
+[ext_resource type="Resource" uid="uid://cgp5hqyj5inud" path="res://resources/tracks/4.tres" id="6_4lmeg"]
+[ext_resource type="Resource" uid="uid://c713ac8cwa4mo" path="res://resources/tracks/5.tres" id="7_0cp0l"]
+[ext_resource type="Resource" uid="uid://drvx3or1r40nq" path="res://resources/tracks/6.tres" id="8_d2t1y"]
+[ext_resource type="Resource" uid="uid://cumfeifl4tirj" path="res://resources/tracks/7.tres" id="9_gngh3"]
+[ext_resource type="Resource" uid="uid://b18da47ljdeds" path="res://resources/tracks/8.tres" id="10_0n3wm"]
+[ext_resource type="Resource" uid="uid://bff6rbvxn8c42" path="res://resources/tracks/9.tres" id="11_qnost"]
+[ext_resource type="Resource" uid="uid://clkrhb56lr14a" path="res://resources/tracks/10.tres" id="12_wnkbs"]
+[ext_resource type="Resource" uid="uid://1au103sewd80" path="res://resources/tracks/11.tres" id="13_f6a44"]
+[ext_resource type="Resource" uid="uid://dc6ynlp7ah1xc" path="res://resources/tracks/12.tres" id="14_0cbny"]
+[ext_resource type="Resource" uid="uid://dotngvfkwe3ns" path="res://resources/tracks/13.tres" id="15_hrvbo"]
+[ext_resource type="Resource" uid="uid://bmnwbqpe3icu3" path="res://resources/tracks/14.tres" id="16_uypp3"]
+[ext_resource type="Resource" uid="uid://bwrrqnv77ej2d" path="res://resources/tracks/15.tres" id="17_blkrb"]
+[ext_resource type="Resource" uid="uid://dba0jdax0hx50" path="res://resources/tracks/16.tres" id="18_abqjc"]
+[ext_resource type="Resource" uid="uid://chn7m2yqaqlmb" path="res://resources/tracks/17.tres" id="19_6iyjs"]
+[ext_resource type="Resource" uid="uid://d227tofohufoj" path="res://resources/tracks/18.tres" id="20_4w656"]
+[ext_resource type="Resource" uid="uid://d3v5rt4hvxou6" path="res://resources/tracks/19.tres" id="21_e71vb"]
+[ext_resource type="Resource" uid="uid://bc73l4wi8fotc" path="res://resources/tracks/20.tres" id="22_rnkwl"]
+[ext_resource type="Resource" uid="uid://1brjerq1xhgs" path="res://resources/tracks/21.tres" id="23_vke2r"]
+[ext_resource type="Resource" uid="uid://c8b4ltj2vhhhp" path="res://resources/tracks/22.tres" id="24_uit24"]
+[ext_resource type="Resource" uid="uid://5ssqma41w18g" path="res://resources/tracks/23.tres" id="25_ruth0"]
+[ext_resource type="Resource" uid="uid://cjk6t45gq6n17" path="res://resources/tracks/24.tres" id="26_rm4vd"]
+[ext_resource type="Resource" uid="uid://cb0dc547gvtyh" path="res://resources/tracks/25.tres" id="27_pjyto"]
+[ext_resource type="Resource" uid="uid://gscobwtddwwm" path="res://resources/tracks/26.tres" id="28_sm6fg"]
+[ext_resource type="Resource" uid="uid://b8xs4ejgrlu27" path="res://resources/tracks/27.tres" id="29_b17eg"]
+[ext_resource type="Resource" uid="uid://dnn3gb72nbwqu" path="res://resources/tracks/28.tres" id="30_ntx8l"]
+[ext_resource type="Resource" uid="uid://cmdeyivfgxeob" path="res://resources/tracks/29.tres" id="31_uatky"]
+[ext_resource type="Resource" uid="uid://cm7oh87bqan7x" path="res://resources/tracks/30.tres" id="32_rqtf5"]
+[ext_resource type="Resource" uid="uid://7324k10vo0qf" path="res://resources/tracks/31.tres" id="33_1vm84"]
+[ext_resource type="Resource" uid="uid://famygml6vr28" path="res://resources/tracks/32.tres" id="34_wu3dr"]
+[ext_resource type="Resource" uid="uid://respiod8ccd7" path="res://resources/tracks/33.tres" id="35_cyx1q"]
+[ext_resource type="Resource" uid="uid://btsei7deeuy1o" path="res://resources/tracks/34.tres" id="36_0dhbp"]
+[ext_resource type="PackedScene" uid="uid://b8wyesb3egmk4" path="res://scenes/waveform_visualizer/waveform_visualizer.tscn" id="38_b1qrp"]
+[ext_resource type="FontFile" uid="uid://d0on3ehsit2di" path="res://assets/fonts/HelveticaPixel.ttf" id="39_come4"]
+[ext_resource type="Shader" uid="uid://b2b3i2jydbdpk" path="res://shaders/crt.gdshader" id="41_d2t1y"]
+[ext_resource type="FontFile" uid="uid://dbxt1smwn5iun" path="res://assets/fonts/Helvetica.ttf" id="45_0n3wm"]
+[ext_resource type="PackedScene" uid="uid://c5lrk84s8wjtr" path="res://scenes/dot_generator/dot_generator.tscn" id="45_f6a44"]
+[ext_resource type="PackedScene" uid="uid://cj15s74v2iwoa" path="res://scenes/cover/cover.tscn" id="45_qnost"]
+[ext_resource type="FontFile" uid="uid://dxcjeojtlkr62" path="res://assets/fonts/Doto.ttf" id="45_wnkbs"]
+[ext_resource type="FontFile" uid="uid://qneyu15pgbix" path="res://assets/fonts/DepartureMono.otf" id="46_qnost"]
+[ext_resource type="Shader" uid="uid://bdwf0yl6c3w2t" path="res://shaders/pixelate_screen.gdshader" id="46_wnkbs"]
+
+[sub_resource type="Environment" id="Environment_0n3wm"]
+glow_normalized = true
+glow_bloom = 1.0
+
+[sub_resource type="FontVariation" id="FontVariation_h8e4i"]
+base_font = ExtResource("39_come4")
+variation_transform = Transform2D(1, 0, 0, 2.48, 0, 0)
+baseline_offset = 1.16
+
+[sub_resource type="LabelSettings" id="LabelSettings_come4"]
+font = SubResource("FontVariation_h8e4i")
+font_size = 340
+font_color = Color(0, 0, 1, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_4lmeg"]
+base_font = ExtResource("39_come4")
+variation_transform = Transform2D(3.22, 0, 0, 1.47, 0, 0)
+spacing_glyph = 155
+baseline_offset = 0.79
+
+[sub_resource type="LabelSettings" id="LabelSettings_0cp0l"]
+font = SubResource("FontVariation_4lmeg")
+font_size = 340
+font_color = Color(0, 0, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qnost"]
+font = ExtResource("45_wnkbs")
+font_size = 36
+
+[sub_resource type="FontVariation" id="FontVariation_qnost"]
+base_font = ExtResource("45_0n3wm")
+variation_embolden = 0.28
+variation_transform = Transform2D(1, 0.17, 0, 1.76, 0, 0)
+baseline_offset = 0.67
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f6a44"]
+shader = ExtResource("46_wnkbs")
+shader_parameter/pixelSize = 4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0cp0l"]
+shader = ExtResource("41_d2t1y")
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.0
+shader_parameter/corner_soften = 0.0
+shader_parameter/vignette = 0.0
+shader_parameter/scanline_strength = 0.14000000665
+shader_parameter/scanline_density = 1.15
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 1.6
+shader_parameter/luma_smear_px = 3.2450001541375
+shader_parameter/jitter_px = 0.98400004674
+shader_parameter/wobble_px = 1.5
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.35
+shader_parameter/roll_speed = 0.1
+shader_parameter/roll_strength = 0.15
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
+
+[node name="Main" type="Node3D" unique_id=1659851289]
+script = ExtResource("1_0xm2m")
+tracks = Array[ExtResource("2_h2yge")]([ExtResource("3_b1qrp"), ExtResource("4_come4"), ExtResource("5_h8e4i"), ExtResource("6_4lmeg"), ExtResource("7_0cp0l"), ExtResource("8_d2t1y"), ExtResource("9_gngh3"), ExtResource("10_0n3wm"), ExtResource("11_qnost"), ExtResource("12_wnkbs"), ExtResource("13_f6a44"), ExtResource("14_0cbny"), ExtResource("15_hrvbo"), ExtResource("16_uypp3"), ExtResource("17_blkrb"), ExtResource("18_abqjc"), ExtResource("19_6iyjs"), ExtResource("20_4w656"), ExtResource("21_e71vb"), ExtResource("22_rnkwl"), ExtResource("23_vke2r"), ExtResource("24_uit24"), ExtResource("25_ruth0"), ExtResource("26_rm4vd"), ExtResource("27_pjyto"), ExtResource("28_sm6fg"), ExtResource("29_b17eg"), ExtResource("30_ntx8l"), ExtResource("31_uatky"), ExtResource("32_rqtf5"), ExtResource("33_1vm84"), ExtResource("34_wu3dr"), ExtResource("35_cyx1q"), ExtResource("36_0dhbp")])
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1577575462]
+environment = SubResource("Environment_0n3wm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1609665829]
+stream = ExtResource("2_0xm2m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1958538580]
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=456848293]
+z_index = -10
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9647059, 0.9647059, 0.9647059, 1)
+
+[node name="WaveformVisualizer" parent="CanvasLayer" unique_id=701222300 instance=ExtResource("38_b1qrp")]
+position = Vector2(1620, 1080)
+rotation = -9.424778
+scale = Vector2(-1, 1)
+band_width = 6.0
+band_color = Color(0.89708984, 0.8970898, 0.89708984, 1)
+min_band_length = 16.0
+max_band_length = 1000.0
+freq_offset = 10
+height = 1080.0
+
+[node name="WaveformVisualizer2" parent="CanvasLayer" unique_id=1686627965 instance=ExtResource("38_b1qrp")]
+position = Vector2(1620, 1080)
+rotation = -9.424778
+scale = Vector2(-1, 1)
+band_width = 6.0
+band_color = Color(0.89708984, 0.8970898, 0.89708984, 1)
+min_band_length = 16.0
+max_band_length = 1000.0
+freq_offset = 10
+height = 1080.0
+
+[node name="Intro" type="Control" parent="CanvasLayer" unique_id=30751205]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Intro" unique_id=1507579179]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Intro" unique_id=1173191293]
+layout_mode = 0
+offset_top = -16.0
+offset_right = 1624.0
+offset_bottom = 1056.0
+text = "COME ON"
+label_settings = SubResource("LabelSettings_come4")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Intro" unique_id=935494067]
+layout_mode = 0
+offset_left = -32.0
+offset_top = 520.0
+offset_right = 1592.0
+offset_bottom = 1051.39
+text = "K ID"
+label_settings = SubResource("LabelSettings_0cp0l")
+
+[node name="DotGenerator" parent="CanvasLayer" unique_id=1522487084 instance=ExtResource("45_f6a44")]
+row_spacing = 52.0
+
+[node name="Cover" parent="CanvasLayer" unique_id=683668116 instance=ExtResource("45_qnost")]
+position = Vector2(407.99997, 455.99997)
+
+[node name="ScrollingBar" type="ColorRect" parent="CanvasLayer" unique_id=1904463966]
+offset_right = 1624.0
+offset_bottom = 72.0
+color = Color(0, 0, 1, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ScrollingBar" unique_id=1727567193]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 1.0
+offset_bottom = 30.0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_qnost")
+
+[node name="Info" type="Control" parent="CanvasLayer" unique_id=35571778]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 792.0
+offset_top = 208.0
+offset_right = 1520.0
+offset_bottom = 736.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Info" unique_id=1678700650]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer/Info/VBoxContainer" unique_id=2075451941]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.22490484, 0.22490484, 0.22490484, 1)
+theme_override_constants/line_separation = 26
+theme_override_fonts/normal_font = SubResource("FontVariation_qnost")
+theme_override_font_sizes/normal_font_size = 54
+bbcode_enabled = true
+text = "[wave]You're serious, aren't you ?"
+fit_content = true
+
+[node name="Artist" type="RichTextLabel" parent="CanvasLayer/Info/VBoxContainer" unique_id=831400505]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 1, 1)
+theme_override_fonts/normal_font = ExtResource("46_qnost")
+theme_override_font_sizes/normal_font_size = 46
+bbcode_enabled = true
+text = "[wave]// tsubi club"
+fit_content = true
+
+[node name="Pixelate" type="ColorRect" parent="CanvasLayer" unique_id=1563093594]
+z_index = 5
+material = SubResource("ShaderMaterial_f6a44")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="CanvasLayer" unique_id=180420071]
+copy_mode = 2
+
+[node name="CRT" type="ColorRect" parent="CanvasLayer" unique_id=133747385]
+z_index = 5
+material = SubResource("ShaderMaterial_0cp0l")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

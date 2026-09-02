@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cj15s74v2iwoa"]
+
+[ext_resource type="Texture2D" uid="uid://f6ma3jsornbi" path="res://assets/textures/pixel.png" id="1_3pnff"]
+[ext_resource type="Script" uid="uid://cowo5yi27pquj" path="res://scenes/cover/cover.gd" id="1_8qg1p"]
+[ext_resource type="Shader" uid="uid://d0dv55ambo8iw" path="res://shaders/pixelate.gdshader" id="1_bhwv1"]
+[ext_resource type="Texture2D" uid="uid://k3v48k1n8eti" path="res://assets/covers/You're serious, aren't you ？.png" id="1_sjc3l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0n3wm"]
+shader = ExtResource("1_bhwv1")
+shader_parameter/pixelSize = 4
+
+[node name="Cover" type="Sprite2D" unique_id=683668116]
+material = SubResource("ShaderMaterial_0n3wm")
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_sjc3l")
+region_enabled = true
+region_rect = Rect2(280, 0, 718, 720)
+script = ExtResource("1_8qg1p")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=862624609]
+visible = false
+self_modulate = Color(0.8980392, 0.8980392, 0.8980392, 1)
+top_level = true
+z_index = -1
+position = Vector2(40, 40)
+scale = Vector2(504, 504)
+texture = ExtResource("1_3pnff")

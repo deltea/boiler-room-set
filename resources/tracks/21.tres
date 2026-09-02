@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="TrackResource" format=3 uid="uid://1brjerq1xhgs"]
+
+[ext_resource type="Texture2D" uid="uid://comvx4v337rqg" path="res://assets/covers/rayquaza ex.png" id="1_6blv2"]
+[ext_resource type="Script" uid="uid://bru1uyslj2kgs" path="res://scripts/TrackResource.gd" id="1_sts68"]
+[ext_resource type="Script" uid="uid://c4uxtj7gdqjlw" path="res://scripts/TimestampResource.gd" id="2_62lhv"]
+
+[sub_resource type="Resource" id="Resource_facbu"]
+script = ExtResource("2_62lhv")
+minutes = 70.0
+seconds = 25.31
+metadata/_custom_type_script = "uid://c4uxtj7gdqjlw"
+
+[resource]
+script = ExtResource("1_sts68")
+name = "rayquaza ex"
+timestamp = SubResource("Resource_facbu")
+artist = "Exodia"
+cover_art = ExtResource("1_6blv2")
+metadata/_custom_type_script = "uid://bru1uyslj2kgs"
