@@ -26,7 +26,6 @@ func _ready() -> void:
 
 	generate_timestamps()
 	set_curr_track(start_track_idx)
-	seek_to_track(33, 253)
 
 
 func generate_timestamps() -> void:
