@@ -26,7 +26,6 @@ func _ready() -> void:
 
 	generate_timestamps()
 	set_curr_track(start_track_idx)
-	seek_to_track(4, -2)
 
 
 func generate_timestamps() -> void:
@@ -85,3 +84,10 @@ func _on_scrolling_bar_timer_timeout() -> void:
 
 	if abs(scrolling_bar.position.x) > scrolling_label_length:
 		scrolling_bar.position.x = 0
+
+
+func _input(event: InputEvent) -> void:
+	# if event.is_action_pressed("left"):
+	# 	player.seek(player_pos - 10)
+	if event.is_action_pressed("right"):
+		player.seek(player_pos + 10)
