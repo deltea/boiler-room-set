@@ -26,11 +26,13 @@ func _ready() -> void:
 
 	generate_timestamps()
 	set_curr_track(start_track_idx)
+	seek_to_track(33, 253)
 
 
 func generate_timestamps() -> void:
 	for track in tracks:
 		timestamps.append(track.timestamp.get_seconds())
+	timestamps.pop_front()
 
 
 func _process(dt: float) -> void:
@@ -40,7 +42,6 @@ func _process(dt: float) -> void:
 	var next_idx: int = 0
 	for i in range(timestamps.size()):
 		if player_pos < timestamps[i]:
-			next_idx -= 1
 			break
 		next_idx += 1
 
@@ -56,7 +57,6 @@ func set_curr_track(idx: int) -> void:
 	curr_track_idx = idx
 
 	var curr_track := get_curr_track()
-	# player.seek(curr_track.timestamp.get_seconds())
 	title_label.text = "[wave]" + curr_track.name
 	artist_label.text = "[wave]// " + curr_track.artist
 	cover.texture = curr_track.cover_art
@@ -87,7 +87,11 @@ func _on_scrolling_bar_timer_timeout() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	# if event.is_action_pressed("left"):
-	# 	player.seek(player_pos - 10)
+	if event.is_action_pressed("left"):
+		player.seek(player_pos - 10)
 	if event.is_action_pressed("right"):
 		player.seek(player_pos + 10)
+
+
+func _on_audio_stream_player_finished() -> void:
+	print("done!!!")

@@ -317,4 +317,5 @@ metadata/_edit_lock_ = true
 wait_time = 0.2
 autostart = true
 
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
 [connection signal="timeout" from="ScrollingBarTimer" to="." method="_on_scrolling_bar_timer_timeout"]
