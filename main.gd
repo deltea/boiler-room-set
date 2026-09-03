@@ -18,17 +18,35 @@ extends Node3D
 var curr_track_idx: int = start_track_idx
 var player_pos: float = 0.0
 var scrolling_label_length: float = 0.0
+var timestamps: Array[float] = []
 
 
 func _ready() -> void:
 	player.play()
 
+	generate_timestamps()
 	set_curr_track(start_track_idx)
+	seek_to_track(4, -2)
+
+
+func generate_timestamps() -> void:
+	for track in tracks:
+		timestamps.append(track.timestamp.get_seconds())
 
 
 func _process(dt: float) -> void:
 	player_pos = player.get_playback_position() + AudioServer.get_time_since_last_mix()
 	player_pos -= AudioServer.get_output_latency()
+
+	var next_idx: int = 0
+	for i in range(timestamps.size()):
+		if player_pos < timestamps[i]:
+			next_idx -= 1
+			break
+		next_idx += 1
+
+	if next_idx > curr_track_idx:
+		set_curr_track(next_idx)
 
 
 func get_curr_track() -> TrackResource:
@@ -39,7 +57,7 @@ func set_curr_track(idx: int) -> void:
 	curr_track_idx = idx
 
 	var curr_track := get_curr_track()
-	player.seek(curr_track.timestamp.get_seconds())
+	# player.seek(curr_track.timestamp.get_seconds())
 	title_label.text = "[wave]" + curr_track.name
 	artist_label.text = "[wave]// " + curr_track.artist
 	cover.texture = curr_track.cover_art
@@ -49,6 +67,10 @@ func set_curr_track(idx: int) -> void:
 		set_scrolling_label("next up: " + next_track.name + " by " + next_track.artist)
 	else:
 		set_scrolling_label("hope you enjoyed the mix, see you next time!")
+
+
+func seek_to_track(track_idx: int, offset: float = 0.0) -> void:
+	player.seek(tracks[track_idx].timestamp.get_seconds() + offset)
 
 
 func set_scrolling_label(text: String) -> void:
