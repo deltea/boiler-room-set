@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://mry81mc2hsva"]
+
+[ext_resource type="FontFile" uid="uid://qneyu15pgbix" path="res://assets/fonts/DepartureMono.otf" id="1_togms"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hrvbo"]
+font = ExtResource("1_togms")
+font_size = 32
+font_color = Color(0.57700837, 0.5770084, 0.57700837, 1)
+
+[node name="QueueTrack" type="Label" unique_id=526084906]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "1. You're serious aren't you ? // tsubi club"
+label_settings = SubResource("LabelSettings_hrvbo")

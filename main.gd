@@ -9,11 +9,15 @@ extends Node3D
 @onready var cover: Sprite2D = $CanvasLayer/Cover
 @onready var title_label: RichTextLabel = $CanvasLayer/Info/VBoxContainer/Title
 @onready var artist_label: RichTextLabel = $CanvasLayer/Info/VBoxContainer/Artist
-@onready var scrolling_label: Label = $CanvasLayer/ScrollingBar/Label
+
+@onready var scrolling_bar: ColorRect = $CanvasLayer/ScrollingBar
+@onready var scrolling_label_1: Label = $CanvasLayer/ScrollingBar/Label1
+@onready var scrolling_label_2: Label = $CanvasLayer/ScrollingBar/Label2
 
 
 var curr_track_idx: int = start_track_idx
 var player_pos: float = 0.0
+var scrolling_label_length: float = 0.0
 
 
 func _ready() -> void:
@@ -25,8 +29,6 @@ func _ready() -> void:
 func _process(dt: float) -> void:
 	player_pos = player.get_playback_position() + AudioServer.get_time_since_last_mix()
 	player_pos -= AudioServer.get_output_latency()
-
-	$CanvasLayer/ScrollingBar/Label.position.x = snappedf(Clock.time * 40.0, 6.0) - 800
 
 
 func get_curr_track() -> TrackResource:
@@ -44,6 +46,20 @@ func set_curr_track(idx: int) -> void:
 
 	if idx < tracks.size() - 1:
 		var next_track := tracks[curr_track_idx + 1]
-		scrolling_label.text = "next up: " + next_track.name + " by " + next_track.artist
+		set_scrolling_label("next up: " + next_track.name + " by " + next_track.artist)
 	else:
-		scrolling_label.text = "hope you enjoyed the mix, see you next time!"
+		set_scrolling_label("hope you enjoyed the mix, see you next time!")
+
+
+func set_scrolling_label(text: String) -> void:
+	scrolling_label_1.text = text
+	scrolling_label_2.text = text
+	scrolling_label_length = scrolling_label_1.get_combined_minimum_size().x
+	scrolling_label_2.position.x = scrolling_label_length
+
+
+func _on_scrolling_bar_timer_timeout() -> void:
+	scrolling_bar.position.x -= 20.0
+
+	if abs(scrolling_bar.position.x) > scrolling_label_length:
+		scrolling_bar.position.x = 0

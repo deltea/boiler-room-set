@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://djhgykvtswm3f"]
+
+[ext_resource type="Texture2D" uid="uid://df7gf30hgwg1j" path="res://assets/textures/circle.svg" id="1_is4re"]
+[ext_resource type="Script" uid="uid://cwjvyieig8yef" path="res://scenes/moon/moon.gd" id="2_lnmh2"]
+
+[node name="Moon" type="Sprite2D" unique_id=131636163]
+self_modulate = Color(0, 0, 1, 1)
+scale = Vector2(0.06666666, 0.06666666)
+texture = ExtResource("1_is4re")
+centered = false
+script = ExtResource("2_lnmh2")
+
+[node name="Mask" type="Sprite2D" parent="." unique_id=1052158933]
+self_modulate = Color(1, 0, 0, 1)
+clip_children = 1
+texture = ExtResource("1_is4re")
+centered = false
+
+[node name="Eclipse" type="Sprite2D" parent="Mask" unique_id=1859139423]
+self_modulate = Color(0.9607843, 0.9607843, 0.9607843, 1)
+texture = ExtResource("1_is4re")
+centered = false
