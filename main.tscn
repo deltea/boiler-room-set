@@ -48,6 +48,7 @@
 [ext_resource type="PackedScene" uid="uid://djhgykvtswm3f" path="res://scenes/moon/moon.tscn" id="46_f6a44"]
 [ext_resource type="FontFile" uid="uid://qneyu15pgbix" path="res://assets/fonts/DepartureMono.otf" id="46_qnost"]
 [ext_resource type="Shader" uid="uid://bdwf0yl6c3w2t" path="res://shaders/pixelate_screen.gdshader" id="46_wnkbs"]
+[ext_resource type="PackedScene" uid="uid://0ucvnedixy8a" path="res://scenes/channel_display/channel_display.tscn" id="49_0cbny"]
 
 [sub_resource type="Environment" id="Environment_0n3wm"]
 glow_normalized = true
@@ -191,7 +192,10 @@ text = "K ID"
 label_settings = SubResource("LabelSettings_0cp0l")
 
 [node name="DotGenerator" parent="CanvasLayer" unique_id=1522487084 instance=ExtResource("45_f6a44")]
-row_spacing = 52.0
+dot_chance = 0.3
+row_spacing = 48.0
+dot_scale = 0.07
+row_delay = 1.0
 
 [node name="Cover" parent="CanvasLayer" unique_id=683668116 instance=ExtResource("45_qnost")]
 position = Vector2(407.99997, 455.99997)
@@ -271,24 +275,33 @@ layout_mode = 0
 offset_top = 288.0
 offset_bottom = 528.0
 
-[node name="Moon" parent="CanvasLayer" unique_id=131636163 instance=ExtResource("46_f6a44")]
-position = Vector2(288, 824)
+[node name="Moons" type="Node2D" parent="CanvasLayer" unique_id=931857694]
+position = Vector2(1264, 976)
 
-[node name="Moon2" parent="CanvasLayer" unique_id=1642698588 instance=ExtResource("46_f6a44")]
-position = Vector2(336, 824)
-time_offset = 1.0
+[node name="Moon" parent="CanvasLayer/Moons" unique_id=131636163 instance=ExtResource("46_f6a44")]
+position = Vector2(3.0517578e-05, 3.0517578e-05)
 
-[node name="Moon3" parent="CanvasLayer" unique_id=1244579298 instance=ExtResource("46_f6a44")]
-position = Vector2(384, 824)
+[node name="Moon2" parent="CanvasLayer/Moons" unique_id=1642698588 instance=ExtResource("46_f6a44")]
+position = Vector2(48.00003, 3.0517578e-05)
+time_offset = 0.75
+
+[node name="Moon3" parent="CanvasLayer/Moons" unique_id=1244579298 instance=ExtResource("46_f6a44")]
+position = Vector2(96, 3.0517578e-05)
 time_offset = 1.5
 
-[node name="Moon4" parent="CanvasLayer" unique_id=1003043763 instance=ExtResource("46_f6a44")]
-position = Vector2(432, 824)
-time_offset = 1.75
+[node name="Moon4" parent="CanvasLayer/Moons" unique_id=1003043763 instance=ExtResource("46_f6a44")]
+position = Vector2(144, 3.0517578e-05)
+time_offset = 2.25
 
-[node name="Moon5" parent="CanvasLayer" unique_id=1070737949 instance=ExtResource("46_f6a44")]
-position = Vector2(480, 824)
-time_offset = 1.875
+[node name="Moon5" parent="CanvasLayer/Moons" unique_id=1070737949 instance=ExtResource("46_f6a44")]
+position = Vector2(192, 3.0517578e-05)
+time_offset = 3.0
+
+[node name="ChannelDisplay" parent="CanvasLayer" unique_id=487736255 instance=ExtResource("49_0cbny")]
+offset_left = 328.0
+offset_top = 840.0
+offset_right = 464.0
+offset_bottom = 904.0
 
 [node name="Pixelate" type="ColorRect" parent="CanvasLayer" unique_id=1563093594]
 z_index = 5

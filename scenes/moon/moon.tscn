@@ -17,6 +17,7 @@ texture = ExtResource("1_is4re")
 centered = false
 
 [node name="Eclipse" type="Sprite2D" parent="Mask" unique_id=1859139423]
+visible = false
 self_modulate = Color(0.9607843, 0.9607843, 0.9607843, 1)
 texture = ExtResource("1_is4re")
 centered = false

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://0ucvnedixy8a"]
+
+[ext_resource type="Script" uid="uid://bbughan8takli" path="res://scenes/channel_display/channel_display.gd" id="1_le0wc"]
+
+[node name="ChannelDisplay" type="HBoxContainer" unique_id=487736255]
+offset_right = 128.0
+offset_bottom = 64.0
+theme_override_constants/separation = 16
+alignment = 1
+script = ExtResource("1_le0wc")
+
+[node name="LeftBackground" type="ColorRect" parent="." unique_id=634418501]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+color = Color(0.8980392, 0.8980392, 0.8980392, 1)
+
+[node name="ColorRect" type="ColorRect" parent="LeftBackground" unique_id=1382382979]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0, 0, 1, 1)
+
+[node name="RightBackground" type="ColorRect" parent="." unique_id=1538234073]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+color = Color(0.8980392, 0.8980392, 0.8980392, 1)
+
+[node name="ColorRect" type="ColorRect" parent="RightBackground" unique_id=1042928416]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0, 0, 1, 1)

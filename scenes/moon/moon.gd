@@ -9,6 +9,8 @@ class_name Moon extends Sprite2D
 
 
 func _ready() -> void:
+	eclipse.show()
+
 	await Clock.wait(time_offset)
 
 	var tween := create_tween().set_trans(Tween.TRANS_QUAD).set_loops()
