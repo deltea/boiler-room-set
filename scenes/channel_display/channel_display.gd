@@ -19,5 +19,5 @@ func _ready() -> void:
 
 func _process(dt: float) -> void:
 	var mag := spectrum.get_magnitude_for_frequency_range(min_hz, max_hz)
-	left_channel.scale = left_channel.scale.lerp(clampf(mag.x * 8, 0, 1) * Vector2.ONE, 30 * dt)
-	right_channel.scale = right_channel.scale.lerp(clampf(mag.y * 8, 0, 1) * Vector2.ONE, 30 * dt)
+	left_channel.scale = left_channel.scale.lerp(clampf(mag.x * 8, 0, 1) * Vector2.ONE, 40 * dt)
+	right_channel.scale = right_channel.scale.lerp(clampf(mag.y * 8, 0, 1) * Vector2.ONE, 40 * dt)
