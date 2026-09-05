@@ -9,15 +9,11 @@ extends Node3D
 @onready var cover: Sprite2D = $CanvasLayer/Cover
 @onready var title_label: RichTextLabel = $CanvasLayer/Info/VBoxContainer/Title
 @onready var artist_label: RichTextLabel = $CanvasLayer/Info/VBoxContainer/Artist
-
-@onready var scrolling_bar: ColorRect = $CanvasLayer/ScrollingBar
-@onready var scrolling_label_1: Label = $CanvasLayer/ScrollingBar/Label1
-@onready var scrolling_label_2: Label = $CanvasLayer/ScrollingBar/Label2
+@onready var scrolling_bar: ScrollingBar = $CanvasLayer/ScrollingBar
 
 
 var curr_track_idx: int = start_track_idx
 var player_pos: float = 0.0
-var scrolling_label_length: float = 0.0
 var timestamps: Array[float] = []
 
 
@@ -60,29 +56,16 @@ func set_curr_track(idx: int) -> void:
 	artist_label.text = "[wave]// " + curr_track.artist
 	cover.texture = curr_track.cover_art
 
+	scrolling_bar.set_alt_text(1, "now playing: " + curr_track.name + " by " + curr_track.artist)
 	if idx < tracks.size() - 1:
 		var next_track := tracks[curr_track_idx + 1]
-		set_scrolling_label("next up: " + next_track.name + " by " + next_track.artist)
+		scrolling_bar.set_alt_text(0, "next up: " + next_track.name + " by " + next_track.artist)
 	else:
-		set_scrolling_label("hope you enjoyed the mix, see you next time!")
+		scrolling_bar.set_alt_text(0, "hope you enjoyed the mix, see you next time!")
 
 
 func seek_to_track(track_idx: int, offset: float = 0.0) -> void:
 	player.seek(tracks[track_idx].timestamp.get_seconds() + offset)
-
-
-func set_scrolling_label(text: String) -> void:
-	scrolling_label_1.text = text
-	scrolling_label_2.text = text
-	scrolling_label_length = scrolling_label_1.get_combined_minimum_size().x
-	scrolling_label_2.position.x = scrolling_label_length
-
-
-func _on_scrolling_bar_timer_timeout() -> void:
-	scrolling_bar.position.x -= 20.0
-
-	if abs(scrolling_bar.position.x) > scrolling_label_length:
-		scrolling_bar.position.x = 0
 
 
 func _input(event: InputEvent) -> void:

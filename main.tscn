@@ -40,11 +40,11 @@
 [ext_resource type="PackedScene" uid="uid://b8wyesb3egmk4" path="res://scenes/waveform_visualizer/waveform_visualizer.tscn" id="38_b1qrp"]
 [ext_resource type="FontFile" uid="uid://d0on3ehsit2di" path="res://assets/fonts/HelveticaPixel.ttf" id="39_come4"]
 [ext_resource type="Shader" uid="uid://b2b3i2jydbdpk" path="res://shaders/crt.gdshader" id="41_d2t1y"]
+[ext_resource type="PackedScene" uid="uid://dy44yvqo2q8g5" path="res://scenes/scrolling_bar/scrolling_bar.tscn" id="42_0cbny"]
 [ext_resource type="PackedScene" uid="uid://cux3wghlm0dqj" path="res://scenes/queue/queue.tscn" id="45_0cbny"]
 [ext_resource type="FontFile" uid="uid://dbxt1smwn5iun" path="res://assets/fonts/Helvetica.ttf" id="45_0n3wm"]
 [ext_resource type="PackedScene" uid="uid://c5lrk84s8wjtr" path="res://scenes/dot_generator/dot_generator.tscn" id="45_f6a44"]
 [ext_resource type="PackedScene" uid="uid://cj15s74v2iwoa" path="res://scenes/cover/cover.tscn" id="45_qnost"]
-[ext_resource type="FontFile" uid="uid://dxcjeojtlkr62" path="res://assets/fonts/Doto.ttf" id="45_wnkbs"]
 [ext_resource type="PackedScene" uid="uid://djhgykvtswm3f" path="res://scenes/moon/moon.tscn" id="46_f6a44"]
 [ext_resource type="FontFile" uid="uid://qneyu15pgbix" path="res://assets/fonts/DepartureMono.otf" id="46_qnost"]
 [ext_resource type="Shader" uid="uid://bdwf0yl6c3w2t" path="res://shaders/pixelate_screen.gdshader" id="46_wnkbs"]
@@ -74,10 +74,6 @@ baseline_offset = 0.79
 font = SubResource("FontVariation_4lmeg")
 font_size = 340
 font_color = Color(0, 0, 1, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_qnost"]
-font = ExtResource("45_wnkbs")
-font_size = 36
 
 [sub_resource type="FontVariation" id="FontVariation_qnost"]
 base_font = ExtResource("45_0n3wm")
@@ -200,38 +196,7 @@ row_delay = 1.0
 [node name="Cover" parent="CanvasLayer" unique_id=683668116 instance=ExtResource("45_qnost")]
 position = Vector2(407.99997, 455.99997)
 
-[node name="ScrollingBar" type="ColorRect" parent="CanvasLayer" unique_id=1904463966]
-offset_right = 3240.0
-offset_bottom = 64.0
-color = Color(0, 0, 1, 1)
-
-[node name="Label1" type="Label" parent="CanvasLayer/ScrollingBar" unique_id=1727567193]
-custom_minimum_size = Vector2(1620, 0)
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -22.0
-offset_right = -1620.0
-offset_bottom = 22.0
-grow_horizontal = 2
-grow_vertical = 2
-label_settings = SubResource("LabelSettings_qnost")
-
-[node name="Label2" type="Label" parent="CanvasLayer/ScrollingBar" unique_id=353602884]
-custom_minimum_size = Vector2(1620, 0)
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -22.0
-offset_right = -1620.0
-offset_bottom = 22.0
-grow_horizontal = 2
-grow_vertical = 2
-label_settings = SubResource("LabelSettings_qnost")
+[node name="ScrollingBar" parent="CanvasLayer" unique_id=475635168 instance=ExtResource("42_0cbny")]
 
 [node name="Info" type="Control" parent="CanvasLayer" unique_id=35571778]
 layout_mode = 3
@@ -326,9 +291,4 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="ScrollingBarTimer" type="Timer" parent="." unique_id=272556623]
-wait_time = 0.2
-autostart = true
-
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
-[connection signal="timeout" from="ScrollingBarTimer" to="." method="_on_scrolling_bar_timer_timeout"]

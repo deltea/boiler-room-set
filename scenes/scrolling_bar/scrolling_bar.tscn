@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dy44yvqo2q8g5"]
+
+[ext_resource type="Script" uid="uid://dcjwuaxlismue" path="res://scenes/scrolling_bar/scrolling_bar.gd" id="1_kyl0p"]
+[ext_resource type="FontFile" uid="uid://dxcjeojtlkr62" path="res://assets/fonts/Doto.ttf" id="1_phh41"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qnost"]
+font = ExtResource("1_phh41")
+font_size = 36
+
+[node name="ScrollingBar" type="ColorRect" unique_id=475635168]
+offset_right = 3240.0
+offset_bottom = 64.0
+color = Color(0, 0, 1, 1)
+script = ExtResource("1_kyl0p")
+
+[node name="Label1" type="Label" parent="." unique_id=1093438157]
+custom_minimum_size = Vector2(1620, 0)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -22.0
+offset_right = -1620.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_qnost")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=816253158]
+custom_minimum_size = Vector2(1620, 0)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -22.0
+offset_right = -1620.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_qnost")
+horizontal_alignment = 1
+
+[node name="ScrollingBarTimer" type="Timer" parent="." unique_id=1952771827]
+wait_time = 0.2
+autostart = true
+
+[node name="AltTimer" type="Timer" parent="." unique_id=77656469]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="ScrollingBarTimer" to="." method="_on_scrolling_bar_timer_timeout"]
+[connection signal="timeout" from="AltTimer" to="." method="_on_alt_timer_timeout"]
