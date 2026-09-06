@@ -13,11 +13,16 @@ script = ExtResource("2_lnmh2")
 [node name="Mask" type="Sprite2D" parent="." unique_id=1052158933]
 self_modulate = Color(1, 0, 0, 1)
 clip_children = 1
+position = Vector2(-60.000004, -60.000004)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_is4re")
 centered = false
+offset = Vector2(-3.8146973e-06, -3.8146973e-06)
 
 [node name="Eclipse" type="Sprite2D" parent="Mask" unique_id=1859139423]
 visible = false
 self_modulate = Color(0.9607843, 0.9607843, 0.9607843, 1)
+position = Vector2(0, 300.00003)
 texture = ExtResource("1_is4re")
 centered = false
+offset = Vector2(0, -300.00003)

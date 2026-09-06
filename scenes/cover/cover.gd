@@ -30,3 +30,13 @@ func _process(dt: float) -> void:
 
 	shadow.position = position + Vector2.ONE * shadow_offset
 	shadow.rotation = rotation
+
+
+func change_texture(new_texture: Texture2D) -> void:
+	var tween := create_tween().set_trans(Tween.TRANS_LINEAR)
+	if texture != new_texture:
+		tween.tween_property(material, "shader_parameter/pixel_size", 70, 0.5)
+		tween.tween_callback(func() -> void: texture = new_texture)
+	else:
+		tween.tween_property(material, "shader_parameter/pixel_size", 70, 0.0)
+	tween.tween_property(material, "shader_parameter/pixel_size", 4, 0.5)

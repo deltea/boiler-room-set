@@ -7,7 +7,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0n3wm"]
 shader = ExtResource("1_bhwv1")
-shader_parameter/pixelSize = 4
+shader_parameter/pixel_size = 4
 
 [node name="Cover" type="Sprite2D" unique_id=683668116]
 material = SubResource("ShaderMaterial_0n3wm")

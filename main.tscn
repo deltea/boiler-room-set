@@ -155,6 +155,7 @@ height = 1080.0
 
 [node name="Intro" type="Control" parent="CanvasLayer" unique_id=30751205]
 visible = false
+z_index = 10
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -248,7 +249,7 @@ position = Vector2(3.0517578e-05, 3.0517578e-05)
 
 [node name="Moon2" parent="CanvasLayer/Moons" unique_id=1642698588 instance=ExtResource("46_f6a44")]
 position = Vector2(48.00003, 3.0517578e-05)
-time_offset = 0.75
+time_offset = 1.0
 
 [node name="Moon3" parent="CanvasLayer/Moons" unique_id=1244579298 instance=ExtResource("46_f6a44")]
 position = Vector2(96, 3.0517578e-05)
@@ -256,11 +257,11 @@ time_offset = 1.5
 
 [node name="Moon4" parent="CanvasLayer/Moons" unique_id=1003043763 instance=ExtResource("46_f6a44")]
 position = Vector2(144, 3.0517578e-05)
-time_offset = 2.25
+time_offset = 1.75
 
 [node name="Moon5" parent="CanvasLayer/Moons" unique_id=1070737949 instance=ExtResource("46_f6a44")]
 position = Vector2(192, 3.0517578e-05)
-time_offset = 3.0
+time_offset = 1.875
 
 [node name="ChannelDisplay" parent="CanvasLayer" unique_id=487736255 instance=ExtResource("49_0cbny")]
 offset_left = 328.0

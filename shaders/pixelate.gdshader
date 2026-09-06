@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform int pixelSize = 4;
+uniform int pixel_size = 4;
 
 void fragment()
 {
@@ -10,8 +10,8 @@ void fragment()
 	int xRes = size.x;
 	int yRes = size.y;
 
-	float xFactor = float(xRes) / float(pixelSize);
-	float yFactor = float(yRes) / float(pixelSize);
+	float xFactor = float(xRes) / float(pixel_size);
+	float yFactor = float(yRes) / float(pixel_size);
 
 	float grid_uv_x = round(UV.x * xFactor) / xFactor;
 	float grid_uv_y = round(UV.y * yFactor) / yFactor;

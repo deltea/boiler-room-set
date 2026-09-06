@@ -54,7 +54,7 @@ func set_curr_track(idx: int) -> void:
 	var curr_track := get_curr_track()
 	title_label.text = "[wave]" + curr_track.name
 	artist_label.text = "[wave]// " + curr_track.artist
-	cover.texture = curr_track.cover_art
+	cover.change_texture(curr_track.cover_art)
 
 	scrolling_bar.set_alt_text(1, "now playing: " + curr_track.name + " by " + curr_track.artist)
 	if idx < tracks.size() - 1:
@@ -73,6 +73,10 @@ func _input(event: InputEvent) -> void:
 		player.seek(player_pos - 10)
 	if event.is_action_pressed("right"):
 		player.seek(player_pos + 10)
+	if event.is_action_pressed("space"):
+		var target_scale := 2.0 if player.pitch_scale == 1.0 else 1.0
+		var tween := create_tween().set_trans(Tween.TRANS_LINEAR)
+		tween.tween_property(player, "pitch_scale", target_scale, 0.5)
 
 
 func _on_audio_stream_player_finished() -> void:
