@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 uniform sampler2D screen_texture : hint_screen_texture, filter_nearest;
-uniform int pixelSize = 4;
+uniform int pixel_size = 4;
 
 void fragment()
 {
@@ -11,8 +11,8 @@ void fragment()
 	int xRes = size.x;
 	int yRes = size.y;
 
-	float xFactor = float(xRes) / float(pixelSize);
-	float yFactor = float(yRes) / float(pixelSize);
+	float xFactor = float(xRes) / float(pixel_size);
+	float yFactor = float(yRes) / float(pixel_size);
 
 	float grid_uv_x = round(SCREEN_UV.x * xFactor) / xFactor;
 	float grid_uv_y = round(SCREEN_UV.y * yFactor) / yFactor;

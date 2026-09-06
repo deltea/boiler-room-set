@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://d0bibbdaeajep"]
+
+[ext_resource type="Shader" uid="uid://d0dv55ambo8iw" path="res://shaders/pixelate.gdshader" id="1_iatiw"]
+[ext_resource type="Script" uid="uid://wuklryp01okn" path="res://scenes/intro/intro.gd" id="1_teox7"]
+[ext_resource type="FontFile" uid="uid://d0on3ehsit2di" path="res://assets/fonts/HelveticaPixel.ttf" id="2_teox7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_teox7"]
+shader = ExtResource("1_iatiw")
+shader_parameter/pixel_size = 1
+
+[sub_resource type="FontVariation" id="FontVariation_h8e4i"]
+base_font = ExtResource("2_teox7")
+variation_transform = Transform2D(1, 0, 0, 2.48, 0, 0)
+baseline_offset = 1.16
+
+[sub_resource type="LabelSettings" id="LabelSettings_come4"]
+font = SubResource("FontVariation_h8e4i")
+font_size = 340
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8twl8"]
+shader = ExtResource("1_iatiw")
+shader_parameter/pixel_size = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hrvbo"]
+shader = ExtResource("1_iatiw")
+shader_parameter/pixel_size = 1
+
+[sub_resource type="FontVariation" id="FontVariation_4lmeg"]
+base_font = ExtResource("2_teox7")
+variation_transform = Transform2D(3.22, 0, 0, 1.47, 0, 0)
+spacing_glyph = 155
+baseline_offset = 0.79
+
+[sub_resource type="LabelSettings" id="LabelSettings_0cp0l"]
+font = SubResource("FontVariation_4lmeg")
+font_size = 340
+
+[node name="Intro" type="Control" unique_id=1562854483]
+z_index = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_teox7")
+
+[node name="Background" type="ColorRect" parent="." unique_id=20342409]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 1, 1)
+
+[node name="ComeLabel" type="Label" parent="." unique_id=1389678764]
+material = SubResource("ShaderMaterial_teox7")
+layout_mode = 0
+offset_top = -16.0
+offset_right = 1020.0
+offset_bottom = 641.56
+text = "COME"
+label_settings = SubResource("LabelSettings_come4")
+
+[node name="OnLabel" type="Label" parent="." unique_id=757213806]
+material = SubResource("ShaderMaterial_8twl8")
+layout_mode = 0
+offset_left = 1096.0
+offset_top = -16.0
+offset_right = 1624.0
+offset_bottom = 641.56
+text = "ON"
+label_settings = SubResource("LabelSettings_come4")
+
+[node name="KidLabel" type="Label" parent="." unique_id=1118875712]
+material = SubResource("ShaderMaterial_hrvbo")
+layout_mode = 0
+offset_left = -32.0
+offset_top = 520.0
+offset_right = 1592.0
+offset_bottom = 1051.39
+text = "K ID"
+label_settings = SubResource("LabelSettings_0cp0l")

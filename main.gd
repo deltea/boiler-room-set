@@ -11,6 +11,9 @@ extends Node3D
 @onready var artist_label: RichTextLabel = $CanvasLayer/Info/VBoxContainer/Artist
 @onready var scrolling_bar: ScrollingBar = $CanvasLayer/ScrollingBar
 
+@onready var screen_pixelate: ColorRect = $CanvasLayer/Pixelate
+@onready var intro: Intro = $CanvasLayer/Intro
+
 
 var curr_track_idx: int = start_track_idx
 var player_pos: float = 0.0
@@ -22,6 +25,15 @@ func _ready() -> void:
 
 	generate_timestamps()
 	set_curr_track(start_track_idx)
+
+	screen_pixelate.material.set_shader_parameter("pixel_size", 1)
+	intro.begin()
+	await intro.finished
+
+	var tween := create_tween()
+	tween.tween_property(screen_pixelate.material, "shader_parameter/pixel_size", 45, 0.4)
+	tween.tween_callback(intro.hide)
+	tween.tween_property(screen_pixelate.material, "shader_parameter/pixel_size", 1, 0.4)
 
 
 func generate_timestamps() -> void:

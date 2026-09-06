@@ -18,7 +18,7 @@ func _ready() -> void:
 	shadow.show()
 
 	var tween := create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT).set_loops()
-	tween.tween_interval(0.8)
+	tween.tween_interval(0.7)
 	tween.tween_property(self, "rot_offset", -pull_back_angle, 1.0).as_relative().set_trans(Tween.TRANS_CIRC)
 	tween.tween_property(self, "rot_offset", 360 + pull_back_angle, 2.0).as_relative()
 	tween.tween_interval(14.0)
