@@ -2,6 +2,13 @@ shader_type canvas_item;
 
 uniform int pixel_size = 4;
 
+varying vec4 vertex_color;
+
+void vertex()
+{
+	vertex_color = COLOR;
+}
+
 void fragment()
 {
 
@@ -18,5 +25,6 @@ void fragment()
 
 	vec4 text = texture(TEXTURE, vec2(grid_uv_x, grid_uv_y));
 
-	COLOR = text;
+	COLOR = text * vertex_color;
+
 }

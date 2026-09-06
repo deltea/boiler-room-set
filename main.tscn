@@ -39,6 +39,7 @@
 [ext_resource type="Resource" uid="uid://btsei7deeuy1o" path="res://resources/tracks/34.tres" id="36_0dhbp"]
 [ext_resource type="PackedScene" uid="uid://b8wyesb3egmk4" path="res://scenes/waveform_visualizer/waveform_visualizer.tscn" id="38_b1qrp"]
 [ext_resource type="FontFile" uid="uid://d0on3ehsit2di" path="res://assets/fonts/HelveticaPixel.ttf" id="39_come4"]
+[ext_resource type="Shader" uid="uid://d0dv55ambo8iw" path="res://shaders/pixelate.gdshader" id="39_hrvbo"]
 [ext_resource type="Shader" uid="uid://b2b3i2jydbdpk" path="res://shaders/crt.gdshader" id="41_d2t1y"]
 [ext_resource type="PackedScene" uid="uid://dy44yvqo2q8g5" path="res://scenes/scrolling_bar/scrolling_bar.tscn" id="42_0cbny"]
 [ext_resource type="PackedScene" uid="uid://cux3wghlm0dqj" path="res://scenes/queue/queue.tscn" id="45_0cbny"]
@@ -53,6 +54,10 @@
 [sub_resource type="Environment" id="Environment_0n3wm"]
 glow_normalized = true
 glow_bloom = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hrvbo"]
+shader = ExtResource("39_hrvbo")
+shader_parameter/pixel_size = 1
 
 [sub_resource type="FontVariation" id="FontVariation_h8e4i"]
 base_font = ExtResource("39_come4")
@@ -154,7 +159,6 @@ freq_offset = 10
 height = 1080.0
 
 [node name="Intro" type="Control" parent="CanvasLayer" unique_id=30751205]
-visible = false
 z_index = 10
 layout_mode = 3
 anchors_preset = 15
@@ -171,15 +175,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Intro" unique_id=1173191293]
+[node name="ComeLabel" type="Label" parent="CanvasLayer/Intro" unique_id=1173191293]
+material = SubResource("ShaderMaterial_hrvbo")
 layout_mode = 0
 offset_top = -16.0
 offset_right = 1624.0
-offset_bottom = 1056.0
-text = "COME ON"
+offset_bottom = 641.56
+text = "COME"
 label_settings = SubResource("LabelSettings_come4")
 
-[node name="Label2" type="Label" parent="CanvasLayer/Intro" unique_id=935494067]
+[node name="OnLabel" type="Label" parent="CanvasLayer/Intro" unique_id=2077925697]
+material = SubResource("ShaderMaterial_hrvbo")
+layout_mode = 0
+offset_left = 1096.0
+offset_top = -16.0
+offset_right = 1624.0
+offset_bottom = 641.56
+text = "ON"
+label_settings = SubResource("LabelSettings_come4")
+
+[node name="KidLabel" type="Label" parent="CanvasLayer/Intro" unique_id=935494067]
+material = SubResource("ShaderMaterial_hrvbo")
 layout_mode = 0
 offset_left = -32.0
 offset_top = 520.0
