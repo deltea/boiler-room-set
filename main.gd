@@ -13,6 +13,7 @@ extends Node3D
 
 @onready var screen_pixelate: ColorRect = $CanvasLayer/Pixelate
 @onready var intro: Intro = $CanvasLayer/Intro
+@onready var queue: Queue = $CanvasLayer/Info/Queue
 
 
 var curr_track_idx: int = start_track_idx
@@ -34,6 +35,8 @@ func _ready() -> void:
 	tween.tween_property(screen_pixelate.material, "shader_parameter/pixel_size", 45, 0.4)
 	tween.tween_callback(intro.hide)
 	tween.tween_property(screen_pixelate.material, "shader_parameter/pixel_size", 1, 0.4)
+
+	queue.create_tracks(tracks)
 
 
 func generate_timestamps() -> void:
@@ -60,13 +63,30 @@ func get_curr_track() -> TrackResource:
 	return tracks[curr_track_idx]
 
 
+func animate_info(new_title: String, new_artist: String) -> void:
+	var subtween_artist := create_tween()
+	subtween_artist.tween_subtween(Tweeny.subtween_blink(artist_label, "self_modulate:a", 1.0, 0.0, 0.3))
+	subtween_artist.tween_callback(func() -> void: artist_label.text = "[wave]// " + new_artist)
+	subtween_artist.tween_subtween(Tweeny.subtween_blink(artist_label, "self_modulate:a", 0.0, 1.0, 0.3))
+
+	var subtween_title := create_tween()
+	subtween_title.tween_subtween(Tweeny.subtween_blink(title_label, "self_modulate:a", 1.0, 0.0, 0.3))
+	subtween_title.tween_callback(func() -> void: title_label.text = "[wave]" + new_title)
+	subtween_title.tween_subtween(Tweeny.subtween_blink(title_label, "self_modulate:a", 0.0, 1.0, 0.3))
+
+	var tween := create_tween().set_parallel()
+	tween.tween_subtween(subtween_title)
+	tween.tween_subtween(subtween_artist).set_delay(0.2)
+
+
 func set_curr_track(idx: int) -> void:
 	curr_track_idx = idx
 
 	var curr_track := get_curr_track()
-	title_label.text = "[wave]" + curr_track.name
-	artist_label.text = "[wave]// " + curr_track.artist
+	animate_info(curr_track.name, curr_track.artist)
 	cover.change_texture(curr_track.cover_art)
+
+	queue.set_index(idx)
 
 	scrolling_bar.set_alt_text(1, "now playing: " + curr_track.name + " by " + curr_track.artist)
 	if idx < tracks.size() - 1:
@@ -87,9 +107,9 @@ func _input(event: InputEvent) -> void:
 		player.seek(player_pos + 10)
 
 	if event.is_action_pressed("up"):
-		player.seek(timestamps[(curr_track_idx + 1) % timestamps.size()])
+		player.seek(timestamps[(curr_track_idx) % timestamps.size()])
 	if event.is_action_pressed("down"):
-		player.seek(timestamps[(curr_track_idx - 1) % timestamps.size()])
+		player.seek(timestamps[(curr_track_idx - 2) % timestamps.size()])
 
 	if event.is_action_pressed("space"):
 		var target_scale := 2.0 if player.pitch_scale == 1.0 else 1.0

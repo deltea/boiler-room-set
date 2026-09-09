@@ -1,9 +1,6 @@
 [gd_scene format=3 uid="uid://cux3wghlm0dqj"]
 
-[ext_resource type="PackedScene" uid="uid://mry81mc2hsva" path="res://scenes/queue_track/queue_track.tscn" id="1_ht3de"]
-[ext_resource type="FontFile" uid="uid://qneyu15pgbix" path="res://assets/fonts/DepartureMono.otf" id="2_25ta3"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ht3de"]
+[ext_resource type="Script" uid="uid://ca87kfd7vbakr" path="res://scenes/queue/queue.gd" id="1_1yvm0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ht3de"]
 bg_color = Color(0, 0, 1, 1)
@@ -13,13 +10,9 @@ expand_margin_top = 4.0
 expand_margin_right = 8.0
 expand_margin_bottom = 4.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_25ta3"]
-font = ExtResource("2_25ta3")
-font_size = 32
-
 [sub_resource type="Gradient" id="Gradient_ht3de"]
-offsets = PackedFloat32Array(0.0065502184, 0.9934498)
-colors = PackedColorArray(1, 1, 1, 0, 0.9647059, 0.9647059, 0.9647059, 1)
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 0.9843137, 0.9843137, 0.9843137, 1, 0.9647059, 0.9647059, 0.9647059, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_25ta3"]
 gradient = SubResource("Gradient_ht3de")
@@ -30,53 +23,36 @@ gradient = SubResource("Gradient_ht3de")
 fill_from = Vector2(1, 0)
 fill_to = Vector2(1, 1)
 
-[node name="Queue" type="Panel" unique_id=1381342318]
-offset_right = 622.0
-offset_bottom = 256.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_ht3de")
+[node name="Queue" type="ColorRect" unique_id=765643153]
+clip_children = 1
+offset_right = 656.0
+offset_bottom = 352.0
+script = ExtResource("1_1yvm0")
+metadata/_edit_horizontal_guides_ = [352.0]
 
-[node name="Panel" type="Panel" parent="." unique_id=2070382852]
+[node name="Selector" type="Panel" parent="." unique_id=2070382852]
 layout_mode = 0
 offset_left = -4.0
-offset_top = 107.0
+offset_top = 155.0
 offset_right = 626.0
-offset_bottom = 155.0
+offset_bottom = 203.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ht3de")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1047600630]
 layout_mode = 0
 offset_left = 20.0
-offset_top = 12.0
-offset_right = 602.0
-offset_bottom = 45.0
+offset_top = 160.0
+offset_right = 612.0
+offset_bottom = 544.0
 theme_override_constants/separation = 8
-
-[node name="QueueTrack" parent="VBoxContainer" unique_id=526084906 instance=ExtResource("1_ht3de")]
-layout_mode = 2
-text = "1. You're serious aren't you?"
-
-[node name="QueueTrack2" parent="VBoxContainer" unique_id=1882781045 instance=ExtResource("1_ht3de")]
-layout_mode = 2
-text = "1. You're serious aren't you?"
-
-[node name="QueueTrack3" parent="VBoxContainer" unique_id=633419601 instance=ExtResource("1_ht3de")]
-layout_mode = 2
-text = "1. You're serious aren't you?"
-label_settings = SubResource("LabelSettings_25ta3")
-
-[node name="QueueTrack4" parent="VBoxContainer" unique_id=1698057743 instance=ExtResource("1_ht3de")]
-layout_mode = 2
-text = "1. You're serious aren't you?"
-
-[node name="QueueTrack5" parent="VBoxContainer" unique_id=1899758245 instance=ExtResource("1_ht3de")]
-layout_mode = 2
-text = "1. You're serious aren't you?"
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1731420917]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 96.0
+offset_top = -64.0
+offset_right = 24.0
+offset_bottom = 80.0
 grow_horizontal = 2
 texture = SubResource("GradientTexture2D_25ta3")
 
@@ -86,7 +62,9 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -64.0
+offset_top = -80.0
+offset_right = 24.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = SubResource("GradientTexture2D_ht3de")

@@ -18,6 +18,6 @@ func subtween_blink(
 		subtween.tween_property(object, property, start_val, 0.0)
 		subtween.tween_interval(wait_time / 2)
 		subtween.tween_property(object, property, final_val, 0.0)
-	subtween.parallel().tween_property(object, property, final_val, 0.0).set_delay(duration)
+	# subtween.parallel().tween_property(object, property, final_val, 0.0).set_delay(duration)
 
 	return subtween

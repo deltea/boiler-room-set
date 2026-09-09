@@ -183,10 +183,10 @@ bbcode_enabled = true
 text = "[wave]// tsubi club"
 fit_content = true
 
-[node name="Queue" parent="CanvasLayer/Info" unique_id=482453815 instance=ExtResource("45_0cbny")]
+[node name="Queue" parent="CanvasLayer/Info" unique_id=1381342318 instance=ExtResource("45_0cbny")]
 layout_mode = 0
-offset_top = 288.0
-offset_bottom = 528.0
+offset_top = 272.0
+offset_bottom = 624.0
 
 [node name="Moons" type="Node2D" parent="CanvasLayer" unique_id=931857694]
 position = Vector2(1264, 976)
