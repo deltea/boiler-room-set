@@ -85,6 +85,12 @@ func _input(event: InputEvent) -> void:
 		player.seek(player_pos - 10)
 	if event.is_action_pressed("right"):
 		player.seek(player_pos + 10)
+
+	if event.is_action_pressed("up"):
+		player.seek(timestamps[(curr_track_idx + 1) % timestamps.size()])
+	if event.is_action_pressed("down"):
+		player.seek(timestamps[(curr_track_idx - 1) % timestamps.size()])
+
 	if event.is_action_pressed("space"):
 		var target_scale := 2.0 if player.pitch_scale == 1.0 else 1.0
 		var tween := create_tween().set_trans(Tween.TRANS_LINEAR)

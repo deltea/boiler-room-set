@@ -1,7 +1,7 @@
 class_name Intro extends Control
 
 
-@export var text_show_time = 0.3
+@export var text_show_time: float = 0.3
 
 
 signal finished()
@@ -26,12 +26,15 @@ func begin() -> void:
 
 	tween.tween_callback(func() -> void: come.show())
 	tween.tween_property(come.material, "shader_parameter/pixel_size", 1, text_show_time)
-	tween.tween_interval(0.04)
+	# tween.tween_subtween(Tweeny.subtween_blink(come, "self_modulate:a", 0, 1, text_show_time))
+	tween.tween_interval(0.1)
 
-	tween.tween_callback(func() -> void: on.show())
+	tween.chain().tween_callback(func() -> void: on.show())
 	tween.tween_property(on.material, "shader_parameter/pixel_size", 1, text_show_time)
-	tween.tween_interval(0.2)
+	# tween.tween_subtween(Tweeny.subtween_blink(on, "self_modulate:a", 0, 1, text_show_time))
+	tween.tween_interval(0.1)
 
-	tween.tween_callback(func() -> void: kid.show())
+	tween.chain().tween_callback(func() -> void: kid.show())
 	tween.tween_property(kid.material, "shader_parameter/pixel_size", 1, text_show_time)
+	# tween.tween_subtween(Tweeny.subtween_blink(kid, "self_modulate:a", 0, 1, text_show_time))
 	tween.tween_callback(finished.emit)
