@@ -149,6 +149,7 @@ dot_scale = 0.07
 row_delay = 1.0
 
 [node name="Moons" type="Node2D" parent="CanvasLayer" unique_id=931857694]
+visible = false
 position = Vector2(280, 192)
 
 [node name="Moon" parent="CanvasLayer/Moons" unique_id=131636163 instance=ExtResource("46_f6a44")]
@@ -176,7 +177,7 @@ eclipse_time = 1.5
 time_offset = 1.875
 
 [node name="Cover" parent="CanvasLayer" unique_id=683668116 instance=ExtResource("45_qnost")]
-position = Vector2(408, 568)
+position = Vector2(408, 496)
 
 [node name="ScrollingBar" parent="CanvasLayer" unique_id=475635168 instance=ExtResource("42_0cbny")]
 
@@ -193,6 +194,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 6
@@ -260,9 +263,9 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -10.0
+offset_top = -8.0
 offset_right = 1.0
-offset_bottom = 6.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_blkrb")
