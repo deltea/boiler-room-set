@@ -10,6 +10,7 @@ extends Node3D
 @onready var title_label: RichTextLabel = $CanvasLayer/Info/VBoxContainer/Title
 @onready var artist_label: RichTextLabel = $CanvasLayer/Info/VBoxContainer/Artist
 @onready var scrolling_bar: ScrollingBar = $CanvasLayer/ScrollingBar
+@onready var mix_progress: ProgressBar = $CanvasLayer/MixProgress
 
 @onready var screen_pixelate: ColorRect = $CanvasLayer/Pixelate
 @onready var intro: Intro = $CanvasLayer/Intro
@@ -25,7 +26,6 @@ func _ready() -> void:
 	player.play()
 
 	generate_timestamps()
-	set_curr_track(start_track_idx)
 
 	screen_pixelate.material.set_shader_parameter("pixel_size", 1)
 	intro.begin()
@@ -37,6 +37,7 @@ func _ready() -> void:
 	tween.tween_property(screen_pixelate.material, "shader_parameter/pixel_size", 1, 0.4)
 
 	queue.create_tracks(tracks)
+	set_curr_track(start_track_idx)
 
 
 func generate_timestamps() -> void:
@@ -48,6 +49,7 @@ func generate_timestamps() -> void:
 func _process(dt: float) -> void:
 	player_pos = player.get_playback_position() + AudioServer.get_time_since_last_mix()
 	player_pos -= AudioServer.get_output_latency()
+	mix_progress.value = player_pos / player.stream.get_length()
 
 	var next_idx: int = 0
 	for i in range(timestamps.size()):
@@ -106,9 +108,9 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("right"):
 		player.seek(player_pos + 10)
 
-	if event.is_action_pressed("up"):
-		player.seek(timestamps[(curr_track_idx) % timestamps.size()])
 	if event.is_action_pressed("down"):
+		player.seek(timestamps[(curr_track_idx) % timestamps.size()])
+	if event.is_action_pressed("up"):
 		player.seek(timestamps[(curr_track_idx - 2) % timestamps.size()])
 
 	if event.is_action_pressed("space"):

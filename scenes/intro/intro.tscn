@@ -27,9 +27,9 @@ shader_parameter/pixel_size = 1
 
 [sub_resource type="FontVariation" id="FontVariation_4lmeg"]
 base_font = ExtResource("2_teox7")
-variation_transform = Transform2D(3.22, 0, 0, 1.47, 0, 0)
-spacing_glyph = 155
-baseline_offset = 0.79
+variation_transform = Transform2D(3.2, 0, 0, 1.11, 0, 0)
+spacing_glyph = 165
+baseline_offset = 0.465
 
 [sub_resource type="LabelSettings" id="LabelSettings_0cp0l"]
 font = SubResource("FontVariation_4lmeg")
@@ -57,8 +57,9 @@ color = Color(0, 0, 1, 1)
 [node name="ComeLabel" type="Label" parent="." unique_id=1389678764]
 material = SubResource("ShaderMaterial_teox7")
 layout_mode = 0
+offset_left = 16.0
 offset_top = -16.0
-offset_right = 1020.0
+offset_right = 1036.0
 offset_bottom = 641.56
 text = "COME"
 label_settings = SubResource("LabelSettings_come4")
@@ -66,9 +67,9 @@ label_settings = SubResource("LabelSettings_come4")
 [node name="OnLabel" type="Label" parent="." unique_id=757213806]
 material = SubResource("ShaderMaterial_8twl8")
 layout_mode = 0
-offset_left = 1096.0
+offset_left = 1112.0
 offset_top = -16.0
-offset_right = 1624.0
+offset_right = 1640.0
 offset_bottom = 641.56
 text = "ON"
 label_settings = SubResource("LabelSettings_come4")
@@ -76,9 +77,9 @@ label_settings = SubResource("LabelSettings_come4")
 [node name="KidLabel" type="Label" parent="." unique_id=1118875712]
 material = SubResource("ShaderMaterial_hrvbo")
 layout_mode = 0
-offset_left = -32.0
+offset_left = -48.0
 offset_top = 520.0
-offset_right = 1592.0
+offset_right = 1576.0
 offset_bottom = 1051.39
 text = "K ID"
 label_settings = SubResource("LabelSettings_0cp0l")
